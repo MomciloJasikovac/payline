@@ -1,4 +1,4 @@
-# Slot Game — React + PixiJS
+# Slot Game - React + PixiJS
 
 A 3×3 slot machine built with PixiJS v8 for rendering and React 18 for state. Showcases a clean separation between visual layer and game logic, paylines with wild substitution, and a deterministic reducer-driven state machine.
 
