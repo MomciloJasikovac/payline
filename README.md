@@ -28,7 +28,7 @@ Press **SPIN** or hit **Space**.
 ```
 src/
 ├── game/
-│   ├── config.js           Pure constants — symbols, paylines, layout, timing
+│   ├── config.js           Pure constants - symbols, paylines, layout, timing
 │   └── PixiController.js   Pixi app + reels + spin animation. Zero React imports.
 │
 ├── store/
@@ -36,19 +36,19 @@ src/
 │   └── GameContext.jsx     Context provider + useGame() hook
 │
 ├── components/
-│   ├── GameCanvas.jsx      The bridge — mounts PixiController on a <canvas> ref
+│   ├── GameCanvas.jsx      The bridge - mounts PixiController on a <canvas> ref
 │   ├── HUD.jsx             Balance / bet controls / spin counter / win display
 │   └── SpinButton.jsx      Spin trigger
 │
-├── App.jsx                 Wires reducer → Pixi → UI, drives the spin flow
+├── App.jsx                 Wires reducer -> Pixi -> UI, drives the spin flow
 └── main.jsx                React root + GameProvider
 ```
 
 ### State Machine
 
 ```
-IDLE ──SPIN_START──► SPINNING ──SPIN_COMPLETE──► WIN ──RESET_ROUND──► IDLE
-                                              ├─► LOSE ──RESET_ROUND──► IDLE
+IDLE - SPIN_START -> SPINNING - SPIN_COMPLETE -> WIN - RESET_ROUND -> IDLE
+                                              ├─► LOSE - RESET_ROUND -> IDLE
                                               └─► GAME_OVER (terminal)
 ```
 
