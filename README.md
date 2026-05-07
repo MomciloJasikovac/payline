@@ -2,8 +2,6 @@
 
 A 3×3 slot machine built with PixiJS v8 for rendering and React 18 for state. Showcases a clean separation between visual layer and game logic, paylines with wild substitution, and a deterministic reducer-driven state machine.
 
-> _Add a screenshot or short gif here — `docs/preview.gif` — recruiters skim._
-
 ## Tech Stack
 
 | Layer       | Tech                              |
@@ -118,10 +116,10 @@ Symbols, palette, and payline definitions live in the same file.
 
 ## Roadmap
 
-- [ ] Win effects — payline overlay, symbol pulse on winning cells
-- [ ] Sprite atlas (`@pixi/spritesheet`) instead of emoji glyphs — predictable rendering across platforms
-- [ ] `BitmapText` for symbol labels — zero per-frame rasterization cost
-- [ ] Sound (Howler.js) — spin loop, reel stop click, win jingle
+- [ ] Win effects - payline overlay, symbol pulse on winning cells
+- [ ] Sprite atlas (`@pixi/spritesheet`) instead of emoji glyphs - predictable rendering across platforms
+- [ ] `BitmapText` for symbol labels - zero per-frame rasterization cost
+- [ ] Sound (Howler.js) - spin loop, reel stop click, win jingle
 - [ ] Blur filter on spinning reels (`PIXI.BlurFilter`)
 - [ ] Auto-spin (hold-to-spin)
 - [ ] Particle burst on big wins (`@pixi/particle-emitter`)
@@ -132,10 +130,10 @@ Symbols, palette, and payline definitions live in the same file.
 
 A few decisions worth calling out:
 
-- **Result generation in the reducer, not on the server.** Swap `generateResult()` for an API call when wiring up real RNG — same shape, no flow change. Keeping it in the store means action logs are replayable.
+- **Result generation in the reducer, not on the server.** Swap `generateResult()` for an API call when wiring up real RNG - same shape, no flow change. Keeping it in the store means action logs are replayable.
 - **Pixi as a pure visual function of state.** No two-way binding, no shared mutable state. The reel is a presentation detail; the source of truth is React.
 - **Wild substitution favours the player at all-wild lines.** Three wilds pay the wild rate (highest), not a fallback rate.
-- **`autoDensity` + `devicePixelRatio` resolution** — keeps canvas crisp on retina without manual scaling.
+- **`autoDensity` + `devicePixelRatio` resolution** - keeps canvas crisp on retina without manual scaling.
 
 ## License
 
